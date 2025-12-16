@@ -131,7 +131,6 @@ In the report, a 1 kHz tone was processed by selecting \(k_0=102\), giving an ex
 | 7 | 448.906 | 1.724 |
 | 8 | 1790.644 | 2.605 |
 
-(Values reproduced from the report’s FFT extraction table.) 
 
 ---
 
@@ -143,28 +142,6 @@ In the report, a 1 kHz tone was processed by selecting \(k_0=102\), giving an ex
 ├── assets/                 # images used in this README
 ├── docs/
 │   └── report.pdf          # the original report / write-up
-├── src/
-│   ├── beamforming/
-│   │   ├── steering.py     # W_n(f, θ) / steering vectors
-│   │   ├── doa_scan.py     # Y(θ), P(θ), peak picking
-│   │   └── utils.py
-│   └── run_demo.py         # CLI demo
-├── notebooks/
-│   └── exploration.ipynb
-├── tests/
-├── requirements.txt
-└── LICENSE
-```
-
----
-
-## Quickstart (when code is added)
-
-```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python src/run_demo.py --f0 1000 --scan 0 180 --step 1
 ```
 
 ---
