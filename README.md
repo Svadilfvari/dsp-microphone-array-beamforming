@@ -61,22 +61,24 @@ $$
 
 ### 4) Target bin selection (narrowband tone)
 
-For a known target tone frequency \(F_0\), we pick the FFT bin index \(k_0\) whose positive-frequency value is closest to \(F_0\):
+For a known target tone frequency $F_0$, we pick the FFT bin index $k_0$ whose positive-frequency value is closest to $F_0$:
 
 $$
-k_0 = \arg\min_k \left|\,\text{positive\_freqs}[k] - F_0\,\right|
+k_0=\arg\min_{0\le k\le \lfloor \text{BLK}/2\rfloor}\left|f_k - F_0\right|
 $$
 
 and the exact FFT-bin frequency is:
 
 $$
-f_{k_0} = \text{positive\_freqs}[k_0]
-$$ 
+f_{k_0} = \frac{k_0 F_s}{\text{BLK}}
+$$
 
 ### 5) Beamformer output + DoA estimate
 
-Let \(X_n(f_{k_0})\) be the complex FFT value of microphone \(n\) at bin \(k_0\).  
-For a scan direction \(\theta\), the beamformer output is:
+Let $X_n(f_{k_0})$ be the complex FFT value of microphone $n$ at bin $k_0$.
+For a scan direction $\theta$, the beamformer output is:
+
+
 
 $$
 Y(\theta) = \sum_{n=1}^{N} W_n(f_{k_0},\theta)\,X_n(f_{k_0})
